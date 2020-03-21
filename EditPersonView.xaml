@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="CSharpProgramming2020.Task2.EditPersonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CSharpProgramming2020.Task2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Name: " Grid.Row="0" Grid.Column="0" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"></TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="0" Margin ="20" Text="{Binding PersonToEdit.Name, Mode=TwoWay}"></TextBox>
+        <TextBlock Text="Surname: " Grid.Row="1" Grid.Column="0" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"></TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin ="20" Text="{Binding PersonToEdit.Surname, Mode=TwoWay}"></TextBox>
+        <TextBlock Text="Email: " Grid.Row="2" Grid.Column="0" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"></TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin ="20" Text="{Binding PersonToEdit.Email, Mode=TwoWay}"></TextBox>
+        <TextBlock Text="Date of birth: " Grid.Row="3" Grid.Column="0" FontWeight="DemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"></TextBlock>
+        <DatePicker SelectedDateFormat="Long"  Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" SelectedDate="{Binding PersonToEdit.Birthday, Mode=TwoWay}"></DatePicker>
+
+        <Button Content="SAVE" FontWeight="DemiBold" FontSize ="15" Margin ="20" Grid.Column="0" Grid.Row="4" Command="{Binding ConfirmCommand}"></Button>
+        <Button Content="GO BACK" FontWeight="DemiBold" FontSize ="15" Margin ="20" Grid.Column="1" Grid.Row="4" Command="{Binding CancelCommand}"></Button>
+    </Grid>
+</UserControl>
